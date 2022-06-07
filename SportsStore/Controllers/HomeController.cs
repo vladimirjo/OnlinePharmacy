@@ -29,7 +29,12 @@ public class HomeController : Controller
                 {
                     CurrentPage = productPage,
                     ItemsPerPage = PageSize,
-                    TotalItems = repository.Products.Count()
+                    TotalItems = category == null
+                        ? repository.Products.Count()
+                        : repository.Products.Where
+                        (
+                            e => e.Category == category
+                        ).Count()
                 },
                 CurrentCategory = category
             }
