@@ -36,7 +36,7 @@ public class CartPageTests
         // - create a mock page context and session
         Mock<ISession> mockSession = new Mock<ISession>();
         byte[] data = Encoding.UTF8.GetBytes(JsonSerializer.Serialize(testCart));
-        mockSession.Setup(c => c.TryGetValue(It.IsAny<string>(), out data));
+        mockSession.Setup(c => c.TryGetValue(It.IsAny<string>(), out data!));
 
         Mock<HttpContext> mockContext = new Mock<HttpContext>();
         mockContext.SetupGet(c => c.Session).Returns(mockSession.Object);
