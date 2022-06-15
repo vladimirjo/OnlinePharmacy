@@ -36,9 +36,9 @@ if (app.Environment.IsProduction()) {
 }
 
 app.UseRequestLocalization(opts => {
-    opts.AddSupportedCultures("en-US")
-    .AddSupportedUICultures("en-US")
-    .SetDefaultCulture("en-US");
+    opts.AddSupportedCultures("no-NO")
+    .AddSupportedUICultures("no-NO")
+    .SetDefaultCulture("no-NO");
 });
 
 app.UseStaticFiles();
